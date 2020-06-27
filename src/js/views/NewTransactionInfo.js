@@ -16,7 +16,7 @@ async function selectTransactionsToSend() {
 
 export const NewTransactionInfo = () => (
 	<div className="text-center mt-5">
-		<img class="fr-fin fr-dii" src={"https://cdn.cindr.net/default/logo_hoa_books_bookkeeping_condo_hoa_accounting_-_edit.png" width="768"}/>
+		<img src={logohoaBookkeeping}/>
 		<h1> Company X</h1>
 		<h2>Input Missing Transaction Information</h2>
 		<button onClick={selectTransactionsToSend}>Send to Client</button>
