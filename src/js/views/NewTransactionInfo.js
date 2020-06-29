@@ -18,16 +18,28 @@ async function selectTransactionsToSend() {
 export const NewTransactionInfo = () => (
 	<div className="text-center mt-5">
 		<img src={clientLogo} />
+        
 		<h1> Company X</h1>
-		<h2>Input Missing Transaction Information</h2>
-		<button onClick={selectTransactionsToSend}>Send to Client</button>
-		<form />
-		<p>
-			<img src={rigoImage} />
-		</p>
 
-		<a href="#" className="btn btn-success">
-			If you see this green button, bootstrap is working
-		</a>
+		<h2>Input Missing Transaction Information</h2>
+
+		<button onClick={selectTransactionsToSend}>Send to Client</button>
+
+		<form>
+			<div clasName="row">
+				<div className="col">
+					<label>Transaction id</label>
+					<input type="text" />
+				</div>
+				<div className="col">
+					<label>Transaction id</label>
+					<input type="text" />
+				</div>
+            <div clasName="row">
+				<div className="col">
+					<button>Save Selected Transactions</button>
+				</div>
+			</div>
+		</form>
 	</div>
 );
