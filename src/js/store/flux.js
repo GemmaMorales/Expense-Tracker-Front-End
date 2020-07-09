@@ -1,6 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			token: null,
 			demo: [
 				{
 					title: "FIRST",
@@ -16,6 +17,28 @@ const getState = ({ getStore, getActions, setStore }) => {
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
+			loginUser: async (email, password) => {
+				let token = null;
+				const response = await fetch(
+					"https://3000-bb9b182e-de9c-4409-8dde-db4471e76414.ws-us02.gitpod.io/token",
+					{
+						method: "POST",
+						body: JSON.stringify({
+							email: email,
+							password: password
+						})
+					}
+				);
+				if (response.stautus == 200) {
+					const incomingPayload = await response.json();
+					token = incomingPayload.jwt;
+				} else {
+					alert("Invalid username and password");
+				}
+
+				setStore({ token: token });
+			},
+
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
