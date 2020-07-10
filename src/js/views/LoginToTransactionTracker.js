@@ -6,7 +6,7 @@ import appLogo from "../../img/transaction_tracker_logo_final.jpg";
 
 export const LoginToTransactionTracker = () => {
 	const { store, actions } = React.useContext(Context);
-	console.log(context);
+	console.log(Context);
 
 	const [email, saveEmail] = React.useState("");
 	const [password, savePassword] = React.useState("");
