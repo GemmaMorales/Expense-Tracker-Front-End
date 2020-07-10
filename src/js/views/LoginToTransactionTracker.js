@@ -14,10 +14,10 @@ export const LoginToTransactionTracker = () => {
 		<div className="text-center mt-5">
 			<img src={appLogo} />
 
-			<h2>Please login to track your transactions on Quickbooks</h2>
+			<h2>Login to track your transactions on Quickbooks</h2>
 
 			<form>
-				<div clasName="row">
+				<div className="row">
 					<div className="col">
 						<label>Enter Username</label>
 						<input type="text" onChange={e => saveEmail(e.target.value)} value={email} />
@@ -29,9 +29,7 @@ export const LoginToTransactionTracker = () => {
 				</div>
 				<div clasName="row">
 					<div className="col">
-						<button onClick={() => actions.loginUser(email, password)}>
-							Click to Connect to Quickbooks
-						</button>
+						<button onClick={() => actions.loginUser(email, password)}>Connect to Quickbooks</button>
 					</div>
 				</div>
 			</form>
