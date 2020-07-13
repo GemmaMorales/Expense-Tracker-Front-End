@@ -53,12 +53,13 @@ export const LoginToTransactionTracker = () => {
 									Sign in
 								</button>
 								<hr className="my-4" />
-								<div clasName="row">
-									<div className="col">
-										<button onClick={() => actions.loginUser(email, password)}>
-											Connect to Quickbooks
-										</button>
-									</div>
+								<div clasName="custom-control custom-checkbox mb-3">
+									<button
+										className="btn btn-lg btn-primary btn-block text-uppercase"
+										type="submit"
+										onClick={() => actions.loginUser(email, password)}>
+										Connect to Quickbooks
+									</button>
 								</div>
 							</form>
 						</div>
