@@ -7,8 +7,10 @@
 }
 
 body {
-  background: #007bff;
-  background: linear-gradient(to right, #0062E6, #33AEFF);
+  background: #02468f;
+  background: linear-gradient(to right, #023c7a, rgb(1, 74, 122));
+  padding: 10px;
+  margin: 5px;
 }
 
 
@@ -112,7 +114,9 @@ body {
   color: white;
   background-color: #3b5998;
 }
-
+img{
+    horizontal-align: center;
+}
 
 /* Fallback for Edge
 -------------------------------------------------- */

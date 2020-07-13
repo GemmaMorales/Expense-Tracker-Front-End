@@ -49,13 +49,13 @@ export const LoginToTransactionTracker = () => {
 									<input type="checkbox" className="custom-control-input" id="customCheck1" />
 									<label className="custom-control-label">Remember password</label>
 								</div>
-								<button className="btn btn-lg btn-primary btn-block text-uppercase" type="submit">
+								<button className="btn btn-lg btn-success btn-block text-uppercase" type="submit">
 									Sign in
 								</button>
 								<hr className="my-4" />
 								<div clasName="custom-control custom-checkbox mb-3">
 									<button
-										className="btn btn-lg btn-primary btn-block text-uppercase"
+										className="btn btn-lg btn-success btn-block text-uppercase"
 										type="submit"
 										onClick={() => actions.loginUser(email, password)}>
 										Connect to Quickbooks
