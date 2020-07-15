@@ -17,9 +17,9 @@ export const LoginToTransactionTracker = () => {
 					<div className="card card-signin my-5">
 						<div className="card-body">
 							<h5 className="card-title text-center">Login to track your transactions on Quickbooks</h5>
-
-							<img src={appLogo} />
-
+							<div className="img-container">
+								<img className="appLogo" src={appLogo} />
+							</div>
 							<form className="form-signin">
 								<div className="form-label-group">
 									<label>Enter Email address</label>

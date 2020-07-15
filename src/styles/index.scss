@@ -114,8 +114,11 @@ body {
   color: white;
   background-color: #3b5998;
 }
-img{
-    horizontal-align: center;
+.appLogo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 
 /* Fallback for Edge
