@@ -20,6 +20,7 @@ export const LoginToTransactionTracker = () => {
 							<div className="img-container">
 								<img className="appLogo" src={appLogo} />
 							</div>
+
 							<form className="form-signin">
 								<div className="form-label-group">
 									<label>Enter Email address</label>

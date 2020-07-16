@@ -2,6 +2,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			token: null,
+			data: {},
 			demo: [
 				{
 					title: "FIRST",
@@ -37,6 +38,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 
 				setStore({ token: token });
+			},
+			getData: () => {
+				const store = getStore();
+
+				fetch("https://3000-d7d59d6a-1d3a-4ba3-9283-de66e911534d.ws-us02.gitpod.io/")
+					.then(r => r.json())
+					.then(data => store.data.concat(data));
+				setStore({ data: data });
 			},
 
 			exampleFunction: () => {
