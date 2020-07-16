@@ -3,10 +3,14 @@ import React from "react";
 import "../../styles/home.scss";
 import { Context } from "../store/appContext.js";
 import appLogo from "../../img/transaction_tracker_logo_final.jpg";
+import PropTypes from "prop-types";
 
-export const LoginToTransactionTracker = () => {
+export const LoginToTransactionTracker = ({ history }) => {
 	const { store, actions } = React.useContext(Context);
 	console.log(Context);
+	if (store.token != null) {
+		history.push("/private");
+	}
 
 	const [email, saveEmail] = React.useState("");
 	const [password, savePassword] = React.useState("");
@@ -50,7 +54,7 @@ export const LoginToTransactionTracker = () => {
 								</div>
 
 								<hr className="my-4" />
-								<div clasName="custom-control custom-checkbox mb-3">
+								<div className="custom-control custom-checkbox mb-3">
 									<button
 										className="btn btn-lg btn-success btn-block text-uppercase"
 										type="button"
@@ -65,4 +69,7 @@ export const LoginToTransactionTracker = () => {
 			</div>
 		</div>
 	);
+};
+LoginToTransactionTracker.propTypes = {
+	history: PropTypes.object
 };

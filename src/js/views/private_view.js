@@ -3,10 +3,14 @@ import React from "react";
 import "../../styles/home.scss";
 import { Context } from "../store/appContext.js";
 import appLogo from "../../img/transaction_tracker_logo_final.jpg";
+import PropTypes from "prop-types";
 
-export const LoginToTransactionTracker = () => {
+export const PrivateView = ({ history }) => {
 	const { store, actions } = React.useContext(Context);
 	console.log(Context);
+	if (store.token == null) {
+		history.push("/login");
+	}
 
 	// this function useEffect will run only one time, when the component is finally loaded the first time.
 
@@ -31,4 +35,7 @@ export const LoginToTransactionTracker = () => {
 			</div>
 		</div>
 	);
+};
+PrivateView.propTypes = {
+	history: PropTypes.object
 };

@@ -22,17 +22,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 			loginUser: async (email, password) => {
 				let token = null;
 				let userid = null;
-				const response = await fetch(
-					"https://3000-e0159fbd-3a6f-4c3b-ad36-835e2a9b2ff9.ws-us02.gitpod.io/token",
-					{
-						method: "POST",
-						headers: { "Content-Type": "application/json" },
-						body: JSON.stringify({
-							email: email,
-							password: password
-						})
-					}
-				);
+				const response = await fetch(process.env.API_HOST + "/token", {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify({
+						email: email,
+						password: password
+					})
+				});
 				if (response.status == 200) {
 					const incomingPayload = await response.json();
 					token = incomingPayload.jwt;
@@ -46,7 +43,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			getClients: () => {
 				const store = getStore();
 
-				fetch("https://3000-d7d59d6a-1d3a-4ba3-9283-de66e911534d.ws-us02.gitpod.io/client")
+				fetch(process.env.API_HOST + "/client")
 					.then(r => r.json())
 					.then(data => setStore({ clients: data }));
 			},

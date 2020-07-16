@@ -12,7 +12,7 @@ import { Footer } from "./component/footer";
 import { NewTransactionInfo } from "./views/NewTransactionInfo";
 import { LoginToTransactionTracker } from "./views/LoginToTransactionTracker";
 import { PrivateView } from "./views/private_view";
-
+import { Register } from "./views/Register";
 //create your first component
 export const Layout = () => {
 	//the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -26,7 +26,8 @@ export const Layout = () => {
 					<Navbar />
 					<Switch>
 						<Route exact path="/login" component={LoginToTransactionTracker} />
-						<Route exact path="/private" component={LoginToTransactionTracker} />
+						<Route exact path="/register" component={Register} />
+						<Route exact path="/private" component={PrivateView} />
 						<Route exact path="/new_transaction_info" component={NewTransactionInfo} />
 						<Route path="/demo" component={Demo} />
 						<Route path="/single/:theid" component={Single} />
