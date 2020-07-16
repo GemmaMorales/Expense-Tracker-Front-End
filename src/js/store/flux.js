@@ -2,7 +2,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			token: null,
-			data: {},
+			userid: null,
+			clients: [],
 			demo: [
 				{
 					title: "FIRST",
@@ -20,32 +21,34 @@ const getState = ({ getStore, getActions, setStore }) => {
 			// Use getActions to call a function within a fuction
 			loginUser: async (email, password) => {
 				let token = null;
+				let userid = null;
 				const response = await fetch(
-					"https://3000-bb9b182e-de9c-4409-8dde-db4471e76414.ws-us02.gitpod.io/token",
+					"https://3000-e0159fbd-3a6f-4c3b-ad36-835e2a9b2ff9.ws-us02.gitpod.io/token",
 					{
 						method: "POST",
+						headers: { "Content-Type": "application/json" },
 						body: JSON.stringify({
 							email: email,
 							password: password
 						})
 					}
 				);
-				if (response.stautus == 200) {
+				if (response.status == 200) {
 					const incomingPayload = await response.json();
 					token = incomingPayload.jwt;
+					userid = incomingPayload.id;
 				} else {
 					alert("Invalid username and password");
 				}
 
-				setStore({ token: token });
+				setStore({ token: token, userid: userid });
 			},
-			getData: () => {
+			getClients: () => {
 				const store = getStore();
 
-				fetch("https://3000-d7d59d6a-1d3a-4ba3-9283-de66e911534d.ws-us02.gitpod.io/")
+				fetch("https://3000-d7d59d6a-1d3a-4ba3-9283-de66e911534d.ws-us02.gitpod.io/client")
 					.then(r => r.json())
-					.then(data => store.data.concat(data));
-				setStore({ data: data });
+					.then(data => setStore({ clients: data }));
 			},
 
 			exampleFunction: () => {
