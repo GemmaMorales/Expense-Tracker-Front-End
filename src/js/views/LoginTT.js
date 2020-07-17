@@ -4,6 +4,7 @@ import "../../styles/home.scss";
 import { Context } from "../store/appContext.js";
 import appLogo from "../../img/transaction_tracker_logo_final.jpg";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 export const LoginTT = ({ history }) => {
 	const { store, actions } = React.useContext(Context);
@@ -56,7 +57,7 @@ export const LoginTT = ({ history }) => {
 								<hr className="my-4" />
 								<div className="custom-control custom-checkbox mb-3">
 									<button
-										className="btn btn-lg btn-success btn-block text-uppercase"
+										className="btn btn-lg btn-primary btn-block text-uppercase"
 										type="button"
 										onClick={() => actions.loginUser(email, password)}>
 										Log In
@@ -64,12 +65,12 @@ export const LoginTT = ({ history }) => {
 								</div>
 								<h5 className="card-title text-center">New User?</h5>
 								<div className="custom-control custom-checkbox mb-3">
-									<button
-										className="btn btn-lg btn-success btn-block text-uppercase"
-										type="button"
-										onClick={() => actions.createUser(email, password)}>
-										<a href="/new_user">Create Account</a>
-									</button>
+									<Link
+										to="/new_user"
+										className="btn btn-lg btn-outline-primary btn-block text-uppercase">
+										{" "}
+										Create Account
+									</Link>
 								</div>
 							</form>
 						</div>

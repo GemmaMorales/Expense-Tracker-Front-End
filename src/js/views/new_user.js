@@ -19,17 +19,44 @@ export const NewUser = () => {
 				<label className="signinlabel" htmlFor="name">
 					<b>Name</b>
 				</label>
-				<input type="text" placeholder="Enter Your Name" name="name" id="name" required />
+				<input
+					type="text"
+					placeholder="Enter Your Name"
+					name="name"
+					id="name"
+					required
+					className="form-control"
+					onChange={e => saveName(e.target.value)}
+					value={name}
+				/>
 
 				<label className="signinlabel" htmlFor="email">
 					<b>Email</b>
 				</label>
-				<input type="text" placeholder="Enter Email" name="email" id="email" required />
+				<input
+					type="text"
+					placeholder="Enter Email"
+					name="email"
+					id="email"
+					required
+					className="form-control"
+					onChange={e => saveEmail(e.target.value)}
+					value={email}
+				/>
 
 				<label className="signinlabel" htmlFor="psw">
 					<b>Password</b>
 				</label>
-				<input type="password" placeholder="Enter Password" name="psw" id="psw" required />
+				<input
+					type="password"
+					placeholder="Enter Password"
+					name="psw"
+					id="psw"
+					required
+					className="form-control"
+					onChange={e => savePassword(e.target.value)}
+					value={password}
+				/>
 
 				<label className="signinlabel" htmlFor="psw-repeat">
 					<b>Repeat Password</b>
@@ -40,7 +67,7 @@ export const NewUser = () => {
 				<p className="instructionslabel">
 					By creating an account you agree to our <a href="#">Terms & Privacy</a>.
 				</p>
-				<button type="submit" className="registerbtn">
+				<button type="button" className="registerbtn" onClick={() => actions.createUser(email, password)}>
 					Register
 				</button>
 			</div>

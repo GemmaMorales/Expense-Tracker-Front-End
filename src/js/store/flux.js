@@ -35,10 +35,29 @@ const getState = ({ getStore, getActions, setStore }) => {
 					token = incomingPayload.jwt;
 					userid = incomingPayload.id;
 				} else {
-					alert("Invalid username and password");
+					alert("Invalid username or password");
 				}
 
 				setStore({ token: token, userid: userid });
+			},
+			createUser: async (name, email, password) => {
+				const response = await fetch(process.env.API_HOST + "/user", {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify({
+						name: name,
+						email: email,
+						password: password
+					})
+				});
+				if (response.status == 200) {
+					return true;
+				} else if (response.status == 400) {
+					const incomingPayload = await response.json();
+					alert(incomingPayload.message);
+				} else {
+					alert("Unknown Error.");
+				}
 			},
 			getClients: () => {
 				const store = getStore();
