@@ -8,6 +8,7 @@ export const NewUser = () => {
 	const { store, actions } = React.useContext(Context);
 	console.log(Context);
 
+	const [name, saveName] = React.useState("");
 	const [email, saveEmail] = React.useState("");
 	const [password, savePassword] = React.useState("");
 	return (
