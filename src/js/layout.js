@@ -10,7 +10,7 @@ import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { NewTransactionInfo } from "./views/NewTransactionInfo";
-import { LoginToTransactionTracker } from "./views/LoginToTransactionTracker";
+import { LoginTT } from "./views/LoginTT";
 import { PrivateView } from "./views/private_view";
 import { Register } from "./views/Register";
 //create your first component
@@ -25,7 +25,7 @@ export const Layout = () => {
 				<ScrollToTop>
 					<Navbar />
 					<Switch>
-						<Route exact path="/login" component={LoginToTransactionTracker} />
+						<Route exact path="/login" component={LoginTT} />
 						<Route exact path="/register" component={Register} />
 						<Route exact path="/private" component={PrivateView} />
 						<Route exact path="/new_transaction_info" component={NewTransactionInfo} />

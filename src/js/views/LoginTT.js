@@ -5,7 +5,7 @@ import { Context } from "../store/appContext.js";
 import appLogo from "../../img/transaction_tracker_logo_final.jpg";
 import PropTypes from "prop-types";
 
-export const LoginToTransactionTracker = ({ history }) => {
+export const LoginTT = ({ history }) => {
 	const { store, actions } = React.useContext(Context);
 	console.log(Context);
 	if (store.token != null) {
