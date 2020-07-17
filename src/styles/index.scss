@@ -39,7 +39,7 @@ body {
   border-radius: 5rem;
   letter-spacing: .1rem;
   font-weight: bold;
-  padding: 1rem;
+  padding: 1rem; 
   transition: all 0.2s;
 }
 
@@ -50,7 +50,7 @@ body {
 
 .form-label-group input {
   height: auto;
-  border-radius: 2rem;
+  border-radius: 2rem;  
 }
 
 .form-label-group>input,
@@ -153,7 +153,8 @@ body {
 }
 .signinlabel{
     color: darkgray;
-    font-weight: normal
+    font-weight: normal;
+    font-family: Calibri, sans-serif;
 }
 .instructionslabel{
     color: darkgray;
