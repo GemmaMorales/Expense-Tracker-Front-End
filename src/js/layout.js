@@ -9,10 +9,10 @@ import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
-import { NewTransactionInfo } from "./views/NewTransactionInfo";
+import { Transactions } from "./views/Transactions";
 import { LoginTT } from "./views/LoginTT";
 import { PrivateView } from "./views/private_view";
-import { Register } from "./views/Register";
+import { NewUser } from "./views/new_user";
 //create your first component
 export const Layout = () => {
 	//the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -26,9 +26,9 @@ export const Layout = () => {
 					<Navbar />
 					<Switch>
 						<Route exact path="/login" component={LoginTT} />
-						<Route exact path="/register" component={Register} />
+						<Route exact path="/new_user" component={NewUser} />
 						<Route exact path="/private" component={PrivateView} />
-						<Route exact path="/new_transaction_info" component={NewTransactionInfo} />
+						<Route exact path="/transactions" component={Transactions} />
 						<Route path="/demo" component={Demo} />
 						<Route path="/single/:theid" component={Single} />
 						<Route render={() => <h1>Not found!</h1>} />

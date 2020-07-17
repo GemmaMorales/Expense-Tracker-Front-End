@@ -5,14 +5,14 @@ import clientLogo from "../../img/logohoaBookkeeping.png";
 
 async function selectTransactionsToSend() {
 	console.log("Select transactions with missing information");
-	const response = await fetch(process.env.connectionToBackEnd + "/transactions", {
+	const response = await fetch(process.env.API_HOST + "/transactions", {
 		method: "GET"
 	});
 	const data = await response.json();
 	console.log("Transactions from quickbooks were obtained");
 }
 
-export const NewTransactionInfo = () => (
+export const Transactions = () => (
 	<div className="text-center mt-5">
 		<img src={clientLogo} />
 

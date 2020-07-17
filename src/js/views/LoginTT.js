@@ -62,6 +62,15 @@ export const LoginTT = ({ history }) => {
 										Log In
 									</button>
 								</div>
+								<h5 className="card-title text-center">New User?</h5>
+								<div className="custom-control custom-checkbox mb-3">
+									<button
+										className="btn btn-lg btn-success btn-block text-uppercase"
+										type="button"
+										onClick={() => actions.createUser(email, password)}>
+										Create Account
+									</button>
+								</div>
 							</form>
 						</div>
 					</div>
@@ -70,6 +79,7 @@ export const LoginTT = ({ history }) => {
 		</div>
 	);
 };
-LoginToTransactionTracker.propTypes = {
+
+LoginTT.propTypes = {
 	history: PropTypes.object
 };

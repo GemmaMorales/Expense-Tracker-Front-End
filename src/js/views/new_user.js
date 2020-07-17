@@ -4,7 +4,7 @@ import "../../styles/home.scss";
 import { Context } from "../store/appContext.js";
 import appLogo from "../../img/transaction_tracker_logo_final.jpg";
 
-export const Register = () => {
+export const NewUser = () => {
 	const { store, actions } = React.useContext(Context);
 	console.log(Context);
 
@@ -13,9 +13,13 @@ export const Register = () => {
 	return (
 		<form action="action_page.php">
 			<div className="container">
-				<h1>Register</h1>
+				<h1>Sign In</h1>
 				<p>Please fill in this form to create an account.</p>
 				<hr />
+				<label htmlFor="name">
+					<b>Name</b>
+				</label>
+				<input type="text" placeholder="Enter Your Name" name="name" id="name" required />
 
 				<label htmlFor="email">
 					<b>Email</b>
@@ -43,7 +47,7 @@ export const Register = () => {
 
 			<div className="container signin">
 				<p>
-					Already have an account? <a href="#">Sign in</a>.
+					Already have an account? <a href="#">Log in</a>.
 				</p>
 			</div>
 		</form>
