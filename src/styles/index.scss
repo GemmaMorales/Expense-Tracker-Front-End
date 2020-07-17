@@ -11,7 +11,7 @@ body {
   background: linear-gradient(to right, #023c7a, rgb(1, 74, 122));
   padding: 10px;
   margin: 5px;
-}
+  }
 
 
 .card-signin {
@@ -151,6 +151,13 @@ body {
 .container {
   padding: 16px;
 }
+.signinlabel{
+    color: darkgray;
+    font-weight: normal
+}
+.instructionslabel{
+    color: darkgray;
+}
 
 /* Full-width input fields */
 input[type=text], input[type=password] {
@@ -160,7 +167,7 @@ input[type=text], input[type=password] {
   display: inline-block;
   border: none;
   background: #f1f1f1;
-}
+  }
 
 input[type=text]:focus, input[type=password]:focus {
   background-color: #ddd;
