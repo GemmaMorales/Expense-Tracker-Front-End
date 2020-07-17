@@ -47,7 +47,8 @@ export const NewUser = () => {
 
 			<div className="container signin">
 				<p>
-					Already have an account? <a href="#">Log in</a>.
+					Already have an account?
+					<a href="/login">Log in</a>
 				</p>
 			</div>
 		</form>

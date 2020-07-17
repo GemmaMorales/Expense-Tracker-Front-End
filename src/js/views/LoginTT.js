@@ -68,7 +68,7 @@ export const LoginTT = ({ history }) => {
 										className="btn btn-lg btn-success btn-block text-uppercase"
 										type="button"
 										onClick={() => actions.createUser(email, password)}>
-										Create Account
+										<a href="/new_user">Create Account</a>
 									</button>
 								</div>
 							</form>
