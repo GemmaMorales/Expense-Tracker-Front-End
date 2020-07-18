@@ -4,6 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			token: null,
 			userid: null,
 			clients: [],
+			registrationSuccess: false,
 			demo: [
 				{
 					title: "FIRST",
@@ -51,6 +52,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 				});
 				if (response.status == 200) {
+					setStore({ registrationSuccess: true });
 					return true;
 				} else if (response.status == 400) {
 					const incomingPayload = await response.json();
