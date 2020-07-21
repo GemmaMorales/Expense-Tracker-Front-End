@@ -16,6 +16,7 @@ async function selectTransactionsToSend() {
 export const Transactions = () => {
 	const { store, actions } = React.useContext(Context);
 	const [transactionDescriptions, saveTransactionDescriptions] = React.useState({});
+	console.log("Transaction Description", transactionDescriptions);
 	return (
 		<div>
 			<div>
@@ -75,9 +76,13 @@ export const Transactions = () => {
 										<td>
 											<input
 												type="text"
-												value="enter service/good provided or received"
+												placeholder="enter service/good provided or received"
+												value={transactionDescriptions[t.transaction_id]}
 												onChange={e => {
-													saveTransactionDescriptions({ [t.transaction_id]: e.target.value });
+													saveTransactionDescriptions({
+														...transactionDescriptions,
+														[t.transaction_id]: e.target.value
+													});
 												}}
 											/>
 										</td>
