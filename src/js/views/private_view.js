@@ -25,8 +25,20 @@ export const PrivateView = ({ history }) => {
 								<img className="appLogo" src={appLogo} />
 							</div>
 							<ul>
-								{store.clients.map((t, index) => (
-									<li key={index}>{t.company_name}</li>
+								{store.clients.map((c, index) => (
+									<li key={index}>
+										{c.company_name}
+										<div className="col">
+											<button
+												onClick={() =>
+													actions
+														.getTransactions(c.client_id)
+														.then(() => history.push("/transactions"))
+												}>
+												Get Client Transactions
+											</button>
+										</div>
+									</li>
 								))}
 							</ul>
 						</div>

@@ -5,6 +5,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			userid: null,
 			clients: [],
 			registrationSuccess: false,
+			clientTransactions: [],
 			demo: [
 				{
 					title: "FIRST",
@@ -62,11 +63,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 			getClients: () => {
-				const store = getStore();
-
-				fetch(process.env.API_HOST + "/client")
+				fetch(process.env.API_HOST + "/clients")
 					.then(r => r.json())
 					.then(data => setStore({ clients: data }));
+			},
+
+			getTransactions: async client_id => {
+				console.log("Getting Transactions from Quickbooks");
+				const response = await fetch(process.env.API_HOST + "/client/" + client_id + "/transactions", {
+					method: "GET"
+				});
+				const data = await response.json();
+				setStore({ clientTransactions: data });
+				return true;
+				console.log("Get Client Transactions in Quickbooks");
 			},
 
 			exampleFunction: () => {
