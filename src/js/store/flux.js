@@ -69,7 +69,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			getTransactions: async client_id => {
-				console.log("Getting Transactions from Quickbooks");
+				console.log("Get Transactions from Quickbooks");
 				const response = await fetch(process.env.API_HOST + "/client/" + client_id + "/transactions", {
 					method: "GET"
 				});
