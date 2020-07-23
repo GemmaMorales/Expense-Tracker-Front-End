@@ -13,7 +13,7 @@ import { Transactions } from "./views/Transactions";
 import { LoginTT } from "./views/LoginTT";
 import { PrivateView } from "./views/private_view";
 import { NewUser } from "./views/new_user";
-import { Clients } from "./views/Clients";
+
 //create your first component
 export const Layout = () => {
 	//the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -30,7 +30,6 @@ export const Layout = () => {
 						<Route exact path="/new_user" component={NewUser} />
 						<Route exact path="/private" component={PrivateView} />
 						<Route exact path="/transactions" component={Transactions} />
-						<Route exact path="/clients" component={Clients} />
 						<Route path="/demo" component={Demo} />
 						<Route path="/single/:theid" component={Single} />
 						<Route render={() => <h1>Not found!</h1>} />
