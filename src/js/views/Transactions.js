@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";
 import clientLogo from "../../img/logohoaBookkeeping.png";
@@ -16,7 +16,8 @@ async function selectTransactionsToSend() {
 export const Transactions = () => {
 	const { store, actions } = React.useContext(Context);
 	const [transactionDescriptions, saveTransactionDescriptions] = React.useState({});
-	console.log("Transaction Description", transactionDescriptions);
+	const [payeeOrPayerName, savePayeeOrPayerName] = React.useState({});
+
 	return (
 		<div>
 			<div>
@@ -35,7 +36,6 @@ export const Transactions = () => {
 								<th scope="col">Payee or Payer</th>
 								<th scope="col">Description of Services or Goods Purchased</th>
 								<th scope="col">Amount</th>
-								<th scope="col">Select Transactions</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -44,13 +44,35 @@ export const Transactions = () => {
 									<td>{t.date}</td>
 									<td>{t.transaction_type}</td>
 									<td>{t.transaction_id}</td>
-									{t.vendor_qb_id ? <td>{t.vendor_qb_id}</td> : <td>{t.customer_qb_id}</td>}
-
+									<td>
+										{t.vendor_qb_id ? (
+											<span>{t.vendor_qb_id}</span>
+										) : (
+											<span>{t.customer_qb_id}</span>
+										)}
+										{t.vendor_qb_id == null && t.customer_qb_id == null ? (
+											<input
+												type="text"
+												placeholder="enter the name of provider for service/good"
+												value={payeeOrPayerName[t.transaction_id]}
+												onChange={e => {
+													savePayeeOrPayerName({
+														...payeeOrPayerName,
+														[t.transaction_id]: e.target.value
+													});
+												}}
+											/>
+										) : (
+											""
+										)}
+									</td>
 									<td>
 										<input
 											type="text"
 											placeholder="enter service/good provided or received"
-											value={transactionDescriptions[t.transaction_id]}
+											value={
+												transactionDescriptions[t.transaction_id] || t.transaction_description
+											}
 											onChange={e => {
 												saveTransactionDescriptions({
 													...transactionDescriptions,
@@ -60,9 +82,6 @@ export const Transactions = () => {
 										/>
 									</td>
 									<td>{t.ammount}</td>
-									<td>
-										<button onClick={selectTransactionsToSend} />
-									</td>
 								</tr>
 							))}
 						</tbody>
@@ -76,7 +95,11 @@ export const Transactions = () => {
 					<form>
 						<div clasName="row">
 							<div className="col">
-								<button>Send Selected Transactions</button>
+								<button
+									type="button"
+									onClick={() => actions.saveTransactions(transactionDescriptions, payeeOrPayerName)}>
+									Send Selected Transactions
+								</button>
 							</div>
 						</div>
 					</form>

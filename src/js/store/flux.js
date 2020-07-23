@@ -6,6 +6,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			clients: [],
 			registrationSuccess: false,
 			clientTransactions: [],
+
 			demo: [
 				{
 					title: "FIRST",
@@ -78,10 +79,40 @@ const getState = ({ getStore, getActions, setStore }) => {
 				return true;
 				console.log("Get Client Transactions in Quickbooks");
 			},
+			restoreStore: jsonStore => {
+				setStore(JSON.parse(jsonStore));
+			},
+
+			saveTransactions: async (transactionDescriptions, payeeOrPayerName) => {
+				const response = await fetch(process.env.API_HOST + "/transactions", {
+					method: "PUT",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify(transactionDescriptions)
+				});
+				if (response.status == 200) {
+					const store = getStore();
+					const actions = getActions();
+					setStore({
+						clientTransactions: store.clientTransactions.map(t => {
+							t.transaction_description = transactionDescriptions[t.transaction_id];
+							return t;
+						})
+					});
+
+					alert("Success!");
+					return true;
+				} else if (response.status == 400) {
+					const incomingPayload = await response.json();
+					alert(incomingPayload.message);
+				} else {
+					alert("Unknown Error.");
+				}
+			},
 
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
+
 			loadSomeData: () => {
 				/**
 					fetch().then().then(data => setStore({ "foo": data.bar }))

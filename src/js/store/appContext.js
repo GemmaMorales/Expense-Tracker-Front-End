@@ -13,11 +13,13 @@ const injectContext = PassedComponent => {
 			getState({
 				getStore: () => state.store,
 				getActions: () => state.actions,
-				setStore: updatedStore =>
+				setStore: updatedStore => {
 					setState({
 						store: Object.assign(state.store, updatedStore),
 						actions: { ...state.actions }
-					})
+					});
+					localStorage.setItem("session", JSON.stringify(Object.assign(state.store, updatedStore)));
+				}
 			})
 		);
 
@@ -30,6 +32,7 @@ const injectContext = PassedComponent => {
 			 *
 			 *
 			 **/
+			state.actions.restoreStore(localStorage.getItem("session"));
 			state.actions.getClients(); //<---- calling this function from the flux.js actions
 		}, []);
 
