@@ -7,7 +7,7 @@ export const Navbar = () => {
 	const { store, actions } = React.useContext(Context);
 	return (
 		<nav className="navbar navbar-expand-sm navbar-light bg-light mb-3">
-			<Link className="navbar-brand" to="/">
+			<Link className="navbar-brand" to="/" login>
 				<img className="appLogoNav" src={appLogo} />
 			</Link>
 			<div className="ml-auto">
