@@ -119,8 +119,15 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+    height: auto;
 }
-
+.appLogoNav{
+    display: block;
+    margin-left: 10px;
+    margin-right: auto;
+    width: 25%;
+    height: auto;
+}
 /* Fallback for Edge
 -------------------------------------------------- */
 
