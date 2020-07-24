@@ -16,33 +16,28 @@ export const PrivateView = ({ history }) => {
 
 	return (
 		<div className="container">
-			<div className="row">
-				<div className="col-sm-9 col-md-7 col-lg-5 mx-auto">
-					<div className="card card-signin my-5">
-						<div className="card-body">
-							<h5 className="card-title text-center">Private view</h5>
-							<div className="img-container">
-								<img className="appLogo" src={appLogo} />
-							</div>
-							<ul>
-								{store.clients.map((c, index) => (
-									<li key={index}>
-										{c.company_name}
-										<div className="col">
-											<button
-												onClick={() =>
-													actions
-														.getTransactions(c.client_id)
-														.then(() => history.push("/transactions"))
-												}>
-												Get Client Transactions
-											</button>
-										</div>
-									</li>
-								))}
-							</ul>
-						</div>
-					</div>
+			<div className="container-fluid bg-light mb-3">
+				<h5 className="text-center color: #054488">Private view</h5>
+				<div className="img-container-transactions w-25 p-3 h-25 mx-auto">
+					<img className="appLogo" src={appLogo} />
+				</div>
+				<div className="container">
+					<ul className="list-group">
+						{store.clients.map((c, index) => (
+							<li className="list-group-item" key={index}>
+								{c.company_name}
+
+								<button
+									type="button"
+									className="btn btn-outline-primary float-right"
+									onClick={() =>
+										actions.getTransactions(c.client_id).then(() => history.push("/transactions"))
+									}>
+									Get Client Transactions
+								</button>
+							</li>
+						))}
+					</ul>
 				</div>
 			</div>
 		</div>
