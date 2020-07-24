@@ -88,17 +88,16 @@ export const Transactions = () => {
 					</table>
 				</div>
 				<div className="text-center mt-5">
-					<h1> Company X</h1>
-
 					<h2>Input Missing Transaction Information</h2>
 
 					<form>
 						<div clasName="row">
 							<div className="col">
 								<button
+									className="btn btn-outline-primary"
 									type="button"
 									onClick={() => actions.saveTransactions(transactionDescriptions, payeeOrPayerName)}>
-									Send Selected Transactions
+									<h5 className="whiteh5">Send Selected Transactions</h5>
 								</button>
 							</div>
 						</div>
