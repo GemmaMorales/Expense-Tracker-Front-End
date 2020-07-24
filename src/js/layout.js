@@ -27,7 +27,7 @@ export const Layout = () => {
 				<ScrollToTop>
 					<Navbar />
 					<Switch>
-						<Route exact path="/" />
+						<Route exact path="/" component={LoginTT} />
 						<Route exact path="/login" component={LoginTT} />
 						<Route exact path="/new_user" component={NewUser} />
 						<Route exact path="/private" component={PrivateView} />
