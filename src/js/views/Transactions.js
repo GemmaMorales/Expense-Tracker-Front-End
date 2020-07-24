@@ -88,8 +88,6 @@ export const Transactions = () => {
 					</table>
 				</div>
 				<div className="text-center mt-5">
-					<h2>Input Missing Transaction Information</h2>
-
 					<form>
 						<div clasName="row">
 							<div className="col">
