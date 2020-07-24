@@ -6,7 +6,7 @@ export const Navbar = () => {
 	const { store, actions } = React.useContext(Context);
 	return (
 		<nav className="navbar navbar-light bg-light mb-3">
-			<Link to="/">
+			<Link to="/home">
 				<h5>Transaction Tracker</h5>
 			</Link>
 			<div className="ml-auto">

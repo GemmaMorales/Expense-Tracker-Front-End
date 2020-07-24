@@ -7,6 +7,7 @@ import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 
+import { TransactionTracker } from "./views/home";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { Transactions } from "./views/Transactions";
@@ -26,6 +27,7 @@ export const Layout = () => {
 				<ScrollToTop>
 					<Navbar />
 					<Switch>
+						<Route exact path="/home" component={TransactionTracker} />
 						<Route exact path="/login" component={LoginTT} />
 						<Route exact path="/new_user" component={NewUser} />
 						<Route exact path="/private" component={PrivateView} />

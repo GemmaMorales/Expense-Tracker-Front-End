@@ -37,6 +37,9 @@ export const LoginTT = ({ history }) => {
 										onChange={e => saveEmail(e.target.value)}
 										value={email}
 									/>
+									<label htmlFor="inputEmail">
+										<span>Email address</span>
+									</label>
 								</div>
 								<div className="form-label-group">
 									<input
@@ -48,6 +51,9 @@ export const LoginTT = ({ history }) => {
 										onChange={e => savePassword(e.target.value)}
 										value={password}
 									/>
+									<label htmlFor="inputPassword">
+										<span>Password</span>
+									</label>
 								</div>
 								<div className="custom-control custom-checkbox mb-3">
 									<input type="checkbox" className="custom-control-input" id="customCheck1" />
@@ -57,19 +63,19 @@ export const LoginTT = ({ history }) => {
 								<hr className="my-4" />
 								<div className="custom-control custom-checkbox mb-3">
 									<button
-										className="btn btn-lg btn-primary btn-block text-uppercase"
+										className="btn btn-lg btn-primary btn-block text-capitalize"
 										type="button"
 										onClick={() => actions.loginUser(email, password)}>
-										Log In
+										<h5>Log In</h5>
 									</button>
 								</div>
 								<h5 className="card-title text-center">New User?</h5>
 								<div className="custom-control custom-checkbox mb-3">
 									<Link
 										to="/new_user"
-										className="btn btn-lg btn-outline-primary btn-block text-uppercase">
+										className="btn btn-lg btn-outline-primary btn-block text-capitalize">
 										{" "}
-										Create Account
+										<h5>Create Account</h5>
 									</Link>
 								</div>
 							</form>

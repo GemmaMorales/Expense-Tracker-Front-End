@@ -32,7 +32,7 @@ const injectContext = PassedComponent => {
 			 *
 			 *
 			 **/
-			state.actions.restoreStore(localStorage.getItem("session"));
+			//state.actions.restoreStore(localStorage.getItem("session"));
 			state.actions.getClients(); //<---- calling this function from the flux.js actions
 		}, []);
 
