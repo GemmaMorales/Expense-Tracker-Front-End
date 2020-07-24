@@ -3,6 +3,7 @@ import React from "react";
 import "../../styles/home.scss";
 import { Context } from "../store/appContext.js";
 import appLogo from "../../img/transaction_tracker_logo_final.jpg";
+import { Link } from "react-router-dom";
 
 export const NewUser = () => {
 	const { store, actions } = React.useContext(Context);
@@ -20,7 +21,7 @@ export const NewUser = () => {
 					<p className="instructionslabel">Please fill in this form to create an account.</p>
 					<hr />
 					<label className="signinlabel" htmlFor="name">
-						<b>Name</b>
+						<span className="whitespan">Name</span>
 					</label>
 					<input
 						type="text"
@@ -34,7 +35,7 @@ export const NewUser = () => {
 					/>
 
 					<label className="signinlabel" htmlFor="email">
-						<b>Email</b>
+						<span className="whitespan">Email</span>
 					</label>
 					<input
 						type="text"
@@ -48,7 +49,7 @@ export const NewUser = () => {
 					/>
 
 					<label className="signinlabel" htmlFor="psw">
-						<b>Password</b>
+						<span className="whitespan">Password</span>
 					</label>
 					<input
 						type="password"
@@ -62,7 +63,7 @@ export const NewUser = () => {
 					/>
 
 					<label className="signinlabel" htmlFor="psw-repeat">
-						<b>Repeat Password</b>
+						<span className="whitespan">Repeat Password</span>
 					</label>
 					<input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required />
 					<hr />
@@ -74,15 +75,16 @@ export const NewUser = () => {
 						type="button"
 						className="registerbtn"
 						onClick={() => actions.createUser(name, email, password)}>
-						Register
+						<h5>Register</h5>
 					</button>
 				</div>
+				<div className="container">
+					<h5 className="whiteh5">Already have an account?</h5>
 
-				<div className="container signin">
-					<p>
-						Already have an account?
-						<a href="/login">Log in</a>
-					</p>
+					<Link to="/login" className="btn btn-outline-primary btn-sm btn-block text-capitalize">
+						{" "}
+						<h5 className="whiteh5">Log In</h5>
+					</Link>
 				</div>
 			</form>
 		);
