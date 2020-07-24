@@ -21,11 +21,10 @@ export const LoginTT = ({ history }) => {
 				<div className="col-sm-9 col-md-7 col-lg-5 mx-auto">
 					<div className="card card-signin my-5">
 						<div className="card-body">
-							<h5 className="card-title text-center">Log in to track your transactions in Quickbooks</h5>
-							<div className="img-container">
+							<div className="container">
 								<img className="appLogo" src={appLogo} />
 							</div>
-
+							<h5 className="card-title text-center">Log in to track your transactions in Quickbooks</h5>
 							<form className="form-signin">
 								<div className="form-label-group">
 									<input
@@ -63,7 +62,7 @@ export const LoginTT = ({ history }) => {
 								<hr className="my-4" />
 								<div className="custom-control custom-checkbox mb-3">
 									<button
-										className="btn btn-lg btn-primary btn-block text-capitalize"
+										className="btn btn-primary btn-sm btn-block text-capitalize"
 										type="button"
 										onClick={() => actions.loginUser(email, password)}>
 										<h5>Log In</h5>
@@ -73,7 +72,7 @@ export const LoginTT = ({ history }) => {
 								<div className="custom-control custom-checkbox mb-3">
 									<Link
 										to="/new_user"
-										className="btn btn-lg btn-outline-primary btn-block text-capitalize">
+										className="btn btn-outline-primary btn-sm btn-block text-capitalize">
 										{" "}
 										<h5>Create Account</h5>
 									</Link>
