@@ -20,7 +20,7 @@ export const PrivateView = ({ history }) => {
 				<div className="img-container-transactions w-25 p-3 h-25 mx-auto">
 					<img className="appLogo" src={appLogo} />
 				</div>
-				<h5 className="text-center">Private view</h5>
+				<h5 className="text-center">Client List</h5>
 				<div className="container">
 					<ul className="list-group">
 						{store.clients.map((c, index) => (
