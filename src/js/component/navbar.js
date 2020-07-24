@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext.js";
-import appLogo from "../../img/transaction_tracker_logo_final.jpg";
 
 export const Navbar = () => {
 	const { store, actions } = React.useContext(Context);
