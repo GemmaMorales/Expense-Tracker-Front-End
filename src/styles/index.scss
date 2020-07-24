@@ -152,12 +152,12 @@ body {
   padding: 16px;
 }
 .signinlabel{
-    color: darkgray;
+    color:whitesmoke;
     font-weight: normal;
     font-family: Calibri, sans-serif;
 }
 .instructionslabel{
-    color: darkgray;
+    color: whitesmoke;
 }
 
 /* Full-width input fields */
@@ -183,7 +183,7 @@ hr {
 
 /* Set a style for the submit/register button */
 .registerbtn {
-  background-color: #4CAF50;
+  background-color: rgb(86, 154, 243);
   color: white;
   padding: 16px 20px;
   margin: 8px 0;
@@ -209,6 +209,10 @@ table, td, th {
   border: 1px solid black;
   color: whitesmoke;
 }
+th{
+    font-feature-settings: normal;
+    font-weight: normal;
+}
 table {
   width: 90%;
 }
@@ -224,12 +228,12 @@ p {
 .list-group{
     color: #054488;
 }
-.img-container-transactions{
-    
-}
-.navbar-brand{
+span, h5{
     color: #054488;
 }
-span{
-    color: #054488;
+h1{
+     color: whitesmoke;
+}
+.whitespan{
+    color: whitesmoke;
 }

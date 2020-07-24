@@ -7,7 +7,7 @@ export const Navbar = () => {
 	return (
 		<nav className="navbar navbar-light bg-light mb-3">
 			<Link to="/">
-				<span className="navbar-brand mb-0 h1">Transaction Tracker</span>
+				<h5>Transaction Tracker</h5>
 			</Link>
 			<div className="ml-auto">
 				{store.token == null ? (
@@ -16,7 +16,7 @@ export const Navbar = () => {
 					</Link>
 				) : (
 					<Link to="/private">
-						<span className="navbar-brand mb-0 h1">Private</span>
+						<h5>Private</h5>
 					</Link>
 				)}
 			</div>

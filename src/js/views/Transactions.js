@@ -46,9 +46,9 @@ export const Transactions = () => {
 									<td>{t.transaction_id}</td>
 									<td>
 										{t.vendor_qb_id ? (
-											<span>{t.vendor_qb_id}</span>
+											<span className="whitespan">{t.vendor_qb_id}</span>
 										) : (
-											<span>{t.customer_qb_id}</span>
+											<span className="whitespan">{t.customer_qb_id}</span>
 										)}
 										{t.vendor_qb_id == null && t.customer_qb_id == null ? (
 											<input
