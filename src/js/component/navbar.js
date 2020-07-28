@@ -16,9 +16,13 @@ export const Navbar = () => {
 						<button className="btn btn-primary">Log in</button>
 					</Link>
 				) : (
-					<Link to="/private">
-						<h5>Private</h5>
-					</Link>
+					<div className="d-flex">
+						<Link to="/private">
+							<h5>Private</h5>
+						</Link>
+
+						<button onClick={() => actions.destroySession()}>Log Out</button>
+					</div>
 				)}
 			</div>
 		</nav>

@@ -43,6 +43,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				setStore({ token: token, userid: userid });
 			},
+			destroySession: () => {
+				setStore({ token: null, userid: null });
+			},
+
 			createUser: async (name, email, password) => {
 				const response = await fetch(process.env.API_HOST + "/user", {
 					method: "POST",
@@ -84,7 +88,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			saveTransactions: async (transactionDescriptions, payeeOrPayerName) => {
-				const response = await fetch(process.env.API_HOST + "/transactions", {
+				const response = await fetch(process.env.API_HOST + "/transactions/descriptions", {
 					method: "PUT",
 					headers: { "Content-Type": "application/json" },
 					body: JSON.stringify(transactionDescriptions)
