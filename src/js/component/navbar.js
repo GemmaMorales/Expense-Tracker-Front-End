@@ -21,7 +21,7 @@ export const Navbar = () => {
 							<h5>Private</h5>
 						</Link>
 
-						<button onClick={() => actions.destroySession()}>Log Out</button>
+						<button className="btn btn-primary" onClick={() => actions.destroySession()}>Log Out</button>
 					</div>
 				)}
 			</div>
