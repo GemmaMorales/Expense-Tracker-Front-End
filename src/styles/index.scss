@@ -256,3 +256,13 @@ h1{
     font-size: 32px;
     text-align: center;
     }
+.linkbtn .btn{
+  font-size: 80%;
+  border-radius: 5rem;
+  letter-spacing: .1rem;
+  font-weight: normal;
+  padding: 1rem; 
+  transition: all 0.2s;
+  display: flex; 
+  justify-content: center;
+}
