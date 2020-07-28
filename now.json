@@ -8,7 +8,9 @@
       "config": { "distDir": "public" }
     }
   ],
-
+  "env":{
+      "API_HOST": "@api_host"
+  },
   "routes": [
     {
       "src":"/(.+)\\.([a-zA-Z]{2,4})$",
