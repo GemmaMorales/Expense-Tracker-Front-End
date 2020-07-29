@@ -28,8 +28,8 @@ export const Navbar = () => {
 							</button>
 						</div>
 						<div className="logoutbtn">
-							<button className="btn btn-outline-primary" onClick={() => actions.destroySession()}>
-								<h5>Log Out</h5>
+							<button className="btn btn-primary" onClick={() => actions.destroySession()}>
+								<h5 className="whiteh5">Log Out</h5>
 							</button>
 						</div>
 					</div>
