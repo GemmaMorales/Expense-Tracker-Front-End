@@ -18,13 +18,15 @@ export const LoginTT = ({ history }) => {
 	return (
 		<div className="container">
 			<div className="row">
-				<div className="col-sm-9 col-md-7 col-lg-5 mx-auto">
+				<div className="col-sm-9 col-md-7 col-lg-7 mx-auto">
 					<div className="card card-signin my-5">
 						<div className="card-body">
 							<div className="container">
 								<img className="appLogo" src={appLogo} />
 							</div>
-							<h5 className="card-title text-center">Log in to track your transactions in Quickbooks</h5>
+							<br />
+							<h5 className="ttlogin">Log in to track your transactions in Quickbooks</h5>
+							<br />
 							<form className="form-signin">
 								<div className="form-label-group">
 									<input

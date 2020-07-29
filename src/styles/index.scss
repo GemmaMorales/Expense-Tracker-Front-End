@@ -226,6 +226,7 @@ table, td, th {
 th{
     font-feature-settings: normal;
     font-weight: normal;
+    font-size: 20px;
 }
 table {
   width: 90%;
@@ -242,7 +243,7 @@ p {
 .list-group{
     color: #054488;
 }
-span, h5{
+span, h5, .blueh2{
     color: #054488;
 }
 h1{
@@ -250,6 +251,12 @@ h1{
 }
 .whitespan, .whiteh5{
     color: whitesmoke;
+    font-size: 20px;
+}
+.whitespanf{
+    color: whitesmoke;
+    font-size: 20px;
+    line-height: 40px;
 }
 .startpageh1{
     color: #054488;
@@ -274,4 +281,15 @@ h1{
     float: left;
     padding: 5px;
     margin: 5px;
+}
+.blueh1{
+    color: #054488;
+    text-align: center;
+    line-height: 70px;
+}
+.ttlogin {
+    color: #054488;
+    text-align: center;
+    line-height: 36px;
+    font-size: 24px;
 }

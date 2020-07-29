@@ -21,10 +21,8 @@ export const Transactions = () => {
 	return (
 		<div>
 			<div>
-				<div className="container-fluid bg-light mb-3">
-					<div className="container">
-						<p>Select Transactions with Missing Details</p>
-					</div>
+				<div className="container-fluid bg-light h-25 mb-3">
+					<h1 className="blueh1">Transactions with Missing Details</h1>
 				</div>
 				<div>
 					<table className="table table-striped table-bordered">
