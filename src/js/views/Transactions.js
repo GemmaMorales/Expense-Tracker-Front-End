@@ -3,20 +3,17 @@ import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";
 import clientLogo from "../../img/logohoaBookkeeping.png";
 import { Context } from "../store/appContext.js";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
-async function selectTransactionsToSend() {
-	console.log("Select transactions with missing information");
-	const response = await fetch(process.env.API_HOST + "/transactions", {
-		method: "GET"
-	});
-	const data = await response.json();
-	console.log("Transactions from quickbooks were obtained");
-}
-
-export const Transactions = () => {
+export const Transactions = ({ history }) => {
 	const { store, actions } = React.useContext(Context);
 	const [transactionDescriptions, saveTransactionDescriptions] = React.useState({});
 	const [payeeOrPayerName, savePayeeOrPayerName] = React.useState({});
+
+	if (store.token == null) {
+		history.push("/login");
+	}
 
 	return (
 		<div>
@@ -102,4 +99,8 @@ export const Transactions = () => {
 			</div>
 		</div>
 	);
+};
+
+Transactions.propTypes = {
+	history: PropTypes.object
 };

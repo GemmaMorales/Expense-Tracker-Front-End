@@ -12,7 +12,7 @@ export const Navbar = () => {
 			</Link>
 
 			<div className="ml-auto d-flex">
-				{store.token == null ? (
+				{store.token === null ? (
 					<Link to="/login">
 						<button className="btn btn-primary">
 							<h5 className="whiteh5">Log in</h5>
