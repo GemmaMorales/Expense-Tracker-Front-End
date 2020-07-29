@@ -19,16 +19,19 @@ export const Navbar = () => {
 						</button>
 					</Link>
 				) : (
-					<div className="container">
-						<button className="btn btn-outline-primary">
-							<Link to="/private">
-								<h5>Private</h5>
-							</Link>
-						</button>
-
-						<button className="btn btn-outline-primary" onClick={() => actions.destroySession()}>
-							<h5>Log Out</h5>
-						</button>
+					<div className="ml-auto d-flex">
+						<div className="privatebtn">
+							<button className="btn btn-outline-primary">
+								<Link to="/private">
+									<h5>Private</h5>
+								</Link>
+							</button>
+						</div>
+						<div className="logoutbtn">
+							<button className="btn btn-outline-primary" onClick={() => actions.destroySession()}>
+								<h5>Log Out</h5>
+							</button>
+						</div>
 					</div>
 				)}
 			</div>
