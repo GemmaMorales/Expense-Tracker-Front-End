@@ -12,7 +12,12 @@ export const NewUser = () => {
 	const [name, saveName] = React.useState("");
 	const [email, saveEmail] = React.useState("");
 	const [password, savePassword] = React.useState("");
-	if (store.registrationSuccess == true) return <div>Registration Successful!</div>;
+	if (store.registrationSuccess == true)
+		return (
+			<div>
+				<h5 className="whiteh5">Registration Successful!</h5>
+			</div>
+		);
 	else
 		return (
 			<form action="action_page.php">
