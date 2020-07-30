@@ -6,14 +6,24 @@ import { Context } from "../store/appContext.js";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-export const ClientTransactions = ({ history }) => {
+export const ClientTransactions = ({ history, match }) => {
 	const { store, actions } = React.useContext(Context);
 	const [transactionDescriptions, saveTransactionDescriptions] = React.useState({});
 	const [payeeOrPayerName, savePayeeOrPayerName] = React.useState({});
+	useEffect(() => {
+		actions.getTransactions(match.params.id);
+		console.log(match);
 
-	if (store.token == null) {
-		history.push("/login");
-	}
+		/**
+		 * EDIT THIS!
+		 * This function is the equivalent to "window.onLoad", it only runs once on the entire application lifetime
+		 * you should do your ajax requests or fetch api requests here. Do not use setState() to save data in the
+		 * store, instead use actions, like this:
+		 *
+		 *
+		 **/
+		//<---- calling this function from the flux.js actions
+	}, []);
 
 	return (
 		<div>
@@ -102,5 +112,6 @@ export const ClientTransactions = ({ history }) => {
 };
 
 ClientTransactions.propTypes = {
-	history: PropTypes.object
+	history: PropTypes.object,
+	match: PropTypes.object
 };
