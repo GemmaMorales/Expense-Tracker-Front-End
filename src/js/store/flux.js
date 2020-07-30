@@ -41,7 +41,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					alert("Invalid username or password");
 				}
 
-				setStore({ token: token, userid: userid });
+				setStore({ token: token, userid: userid, registrationSuceess: false });
 			},
 			destroySession: () => {
 				setStore({ token: null, userid: null });

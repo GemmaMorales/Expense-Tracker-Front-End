@@ -12,6 +12,7 @@ export const NewUser = () => {
 	const [name, saveName] = React.useState("");
 	const [email, saveEmail] = React.useState("");
 	const [password, savePassword] = React.useState("");
+
 	if (store.registrationSuccess == true)
 		return (
 			<div>
