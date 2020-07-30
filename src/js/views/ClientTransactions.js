@@ -101,6 +101,6 @@ export const ClientTransactions = ({ history }) => {
 	);
 };
 
-Transactions.propTypes = {
+ClientTransactions.propTypes = {
 	history: PropTypes.object
 };

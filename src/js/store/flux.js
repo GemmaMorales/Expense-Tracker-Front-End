@@ -5,8 +5,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			userid: null,
 			clients: [],
 			registrationSuccess: false,
-            clientTransactions: [],
-            client_id: null,
+			clientTransactions: [],
+			client_id: null,
 
 			demo: [
 				{
@@ -80,20 +80,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 					method: "GET"
 				});
 				const data = await response.json();
-				setStore({ clientTransactions: data, client_id  });
+				setStore({ clientTransactions: data, client_id });
 				return true;
-                console.log("Get Client Transactions in Quickbooks");
+				console.log("Get Client Transactions in Quickbooks");
 			},
-            askTransactions:(client_id)=> {
-                const response = await fetch(process.env.API_HOST + "/ask_transactions", {
+			askTransactions: async client_id => {
+				const response = await fetch(process.env.API_HOST + "/ask_transactions", {
 					method: "POST",
 					headers: { "Content-Type": "application/json" },
 					body: JSON.stringify({
-					client_id: client_id,						
+						client_id: client_id
 					})
 				});
 				if (response.status == 200) {
-					alert("The e-mail was successfully sent to the client.")
+					alert("The e-mail was successfully sent to the client.");
 					return true;
 				} else if (response.status == 400) {
 					const incomingPayload = await response.json();
@@ -101,7 +101,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				} else {
 					alert("Unknown Error.");
 				}
-            },
+			},
 			restoreStore: jsonStore => {
 				setStore(JSON.parse(jsonStore));
 			},

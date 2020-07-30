@@ -34,7 +34,7 @@ export const Layout = () => {
 						<Route exact path="/new_user" component={NewUser} />
 						<Route exact path="/private" component={PrivateView} />
 						<Route exact path="/client/:id/transactions" component={ClientTransactions} />
-                        <Route exact path="/transactions" component={Transactions} />
+						<Route exact path="/transactions" component={Transactions} />
 						<Route path="/demo" component={Demo} />
 						<Route path="/single/:theid" component={Single} />
 						<Route render={() => <h1>Not found!</h1>} />

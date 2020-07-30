@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
 
 export const Transactions = ({ history }) => {
 	const { store, actions } = React.useContext(Context);
-	
+
 	if (store.token == null) {
 		history.push("/login");
 	}
@@ -43,12 +43,8 @@ export const Transactions = ({ history }) => {
 										) : (
 											<span className="whitespan">{t.customer_qb_id}</span>
 										)}
-										
 									</td>
-									<td>
-										
-											{t.description}
-									</td>
+									<td>{t.description}</td>
 									<td>{t.ammount}</td>
 								</tr>
 							))}
