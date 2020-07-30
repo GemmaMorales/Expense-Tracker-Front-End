@@ -6,9 +6,11 @@ import { Context } from "../store/appContext.js";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-export const Transactions = ({ history }) => {
+export const ClientTransactions = ({ history }) => {
 	const { store, actions } = React.useContext(Context);
-	
+	const [transactionDescriptions, saveTransactionDescriptions] = React.useState({});
+	const [payeeOrPayerName, savePayeeOrPayerName] = React.useState({});
+
 	if (store.token == null) {
 		history.push("/login");
 	}
@@ -43,11 +45,36 @@ export const Transactions = ({ history }) => {
 										) : (
 											<span className="whitespan">{t.customer_qb_id}</span>
 										)}
-										
+										{t.vendor_qb_id == null && t.customer_qb_id == null ? (
+											<input
+												type="text"
+												placeholder="enter the name of provider for service/good"
+												value={payeeOrPayerName[t.transaction_id]}
+												onChange={e => {
+													savePayeeOrPayerName({
+														...payeeOrPayerName,
+														[t.transaction_id]: e.target.value
+													});
+												}}
+											/>
+										) : (
+											""
+										)}
 									</td>
 									<td>
-										
-											{t.description}
+										<input
+											type="text"
+											placeholder="enter service/good provided or received"
+											value={
+												transactionDescriptions[t.transaction_id] || t.transaction_description
+											}
+											onChange={e => {
+												saveTransactionDescriptions({
+													...transactionDescriptions,
+													[t.transaction_id]: e.target.value
+												});
+											}}
+										/>
 									</td>
 									<td>{t.ammount}</td>
 								</tr>
@@ -62,8 +89,8 @@ export const Transactions = ({ history }) => {
 								<button
 									className="btn btn-outline-primary"
 									type="button"
-									onClick={() => actions.askTransactions(store.client_id)}>
-									<h5 className="whiteh5">Ask Client for Transaction Details</h5>
+									onClick={() => actions.saveTransactions(transactionDescriptions, payeeOrPayerName)}>
+									<h5 className="whiteh5">Send Selected Transactions</h5>
 								</button>
 							</div>
 						</div>

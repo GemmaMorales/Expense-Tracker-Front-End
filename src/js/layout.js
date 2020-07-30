@@ -12,6 +12,7 @@ import { TransactionTracker } from "./views/home";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { Transactions } from "./views/Transactions";
+import { ClientTransactions } from "./views/ClientTransactions";
 import { LoginTT } from "./views/LoginTT";
 import { PrivateView } from "./views/private_view";
 import { NewUser } from "./views/new_user";
@@ -32,7 +33,8 @@ export const Layout = () => {
 						<Route exact path="/login" component={LoginTT} />
 						<Route exact path="/new_user" component={NewUser} />
 						<Route exact path="/private" component={PrivateView} />
-						<Route exact path="/transactions" component={Transactions} />
+						<Route exact path="/client/:id/transactions" component={ClientTransactions} />
+                        <Route exact path="/transactions" component={Transactions} />
 						<Route path="/demo" component={Demo} />
 						<Route path="/single/:theid" component={Single} />
 						<Route render={() => <h1>Not found!</h1>} />
