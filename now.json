@@ -16,6 +16,11 @@
       "dest":"/$1.$2"
     },
     {
+      "src":"/.*bundle.js$",
+      "headers": { "cache-control": "s-maxage=31536000,immutable" },
+      "dest":"/bundle.js"
+    },
+    {
       "src": "/(.*)",
       "headers": { "cache-control": "s-maxage=0" },
       "dest": "/index.html"
